@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { useEffect, useState } from 'react';
 import *  as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
+import MealNavigator from './navigators/MealNavigator';
 
 const fetchFont = () => {
   Font.loadAsync({
@@ -25,10 +26,7 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={{ fontFamily: 'open-sans-bold' }}>Hello world</Text>
-
-    </View >
+    <MealNavigator />
   );
 }
 

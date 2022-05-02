@@ -4,22 +4,30 @@ import { Touchable } from 'react-native-web';
 
 import { CATEGORIES } from '../dummy_data/data'
 
-const renderGridItem = (ItemData) => {
 
-    return (
-        <TouchableOpacity style={styles.category}>
-            <Image
-                style={{ resizeMode: 'cover', width: '100%', height: 150, borderRadius: 10 }}
-                source={ItemData.item.img} />
-            <View style={{ position: 'absolute', top: 0, left: 0, backgroundColor: 'white', borderRadius: 10, borderBottomLeftRadius: 0 }}>
-                <Text style={styles.category_text}>{ItemData.item.title}</Text>
-            </View>
-        </TouchableOpacity>
-    );
-}
 
 
 const CategoriesScreen = props => {
+    const renderGridItem = (ItemData) => {
+        return (
+            <TouchableOpacity
+                style={styles.category}
+                onPress={() => {
+                    props.navigation.navigate('CategoryMeals', {
+                        item: ItemData.item,
+                        otherParam: 'anything you want here',
+                    })
+                }}>
+                <Image
+                    style={{ resizeMode: 'cover', width: '100%', height: 150, borderRadius: 10 }}
+                    source={ItemData.item.img} />
+                <View style={{ position: 'absolute', top: 0, left: 0, backgroundColor: 'white', borderRadius: 10, borderBottomLeftRadius: 0 }}>
+                    <Text style={styles.category_text}>{ItemData.item.title}</Text>
+                </View>
+            </TouchableOpacity>
+        );
+    }
+
     return (<View style={styles.screen}>
         <View style={{ alignItems: 'center', justifyContent: 'center', width: '100%' }}>
             <FlatList
@@ -29,11 +37,11 @@ const CategoriesScreen = props => {
                 numColumns={2}
                 key={2}
             />
-
         </View>
     </View >
     );
 };
+
 
 const styles = StyleSheet.create({
     screen: {
@@ -59,8 +67,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         paddingHorizontal: 5,
         color: '#1E3163',
-        fontWeight: 'bold',
-        fontFamily: 'open-sans'
+        fontFamily: 'open-sans-bold'
     },
 
 });

@@ -13,6 +13,18 @@ const MealNavigator = createStackNavigator({
     CategoryMeals: CategoryMealsScreen,
     DetailedMeal: DetailedMealsScreen,
     FavoriteMeals: FavoriteMealsScreen,
-});
+},
+    {
+        initialRouteName: 'Categories',
+        defaultNavigationOptions: {
+            headerStyle: {
+                backgroundColor: 'rgb(80, 65, 155)',
+            },
+            headerTitleStyle: {
+                fontSize: 22,
+            },
+            headerTintColor: 'white'
+        }
+    });
 
 export default createAppContainer(MealNavigator);

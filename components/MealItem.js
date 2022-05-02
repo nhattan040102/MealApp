@@ -3,7 +3,9 @@ import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 
 const MealItem = (props) => {
     return (
-        <View></View>
+        <TouchableOpacity>
+
+        </TouchableOpacity>
     );
 }
 const styles = StyleSheet.create({

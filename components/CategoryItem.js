@@ -8,7 +8,6 @@ const CategoryItem = (props) => {
             onPress={() => {
                 props.navigation.navigate('CategoryMeals', {
                     item: props.item,
-                    otherParam: 'anything you want here',
                 })
             }}
         >

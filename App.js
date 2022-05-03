@@ -15,8 +15,6 @@ const fetchFont = async () => {
 };
 
 export default function App() {
-
-
   const [dataLoaded, setDataLoaded] = useState(false);
   if (!dataLoaded) {
     return (

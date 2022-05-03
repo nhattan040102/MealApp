@@ -16,4 +16,10 @@ const styles = StyleSheet.create({
     }
 });
 
+DetailedMealsScreen.navigationOptions = navigationData => {
+    return ({
+        headerRight: () => <Text> Button</Text>
+    });
+}
+
 export default DetailedMealsScreen;
